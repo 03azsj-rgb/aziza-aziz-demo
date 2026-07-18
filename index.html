@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#6f2131">
-  <meta name="description" content="Aziza &amp; Aziz — contemporary Emirati abayas, Mukhawara and refined homewear.">
-  <title>Aziza &amp; Aziz — Emirati Boutique</title>
+  <meta name="description" content="مخاوير يدوه — Emirati Mukhawaras, abayas and elegant pajamas.">
+  <title>مخاوير يدوه — Emirati Boutique</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap');
 
@@ -58,7 +58,7 @@
     .loader-emblem { position: relative; display: grid; place-items: center; width: 150px; height: 150px; border: 1px solid rgba(255,255,255,.3); border-radius: 50%; animation: loaderTurn 5s linear infinite; }
     .loader-emblem::before, .loader-emblem::after { content: ""; position: absolute; width: 72%; height: 72%; border: 1px solid rgba(216,193,160,.5); transform: rotate(45deg); }
     .loader-emblem::after { width: 48%; height: 48%; transform: rotate(22.5deg); }
-    .loader-emblem span { position: relative; z-index: 2; font: 500 2.4rem "Playfair Display", serif; animation: loaderTurn 5s linear infinite reverse; }
+    .loader-emblem span { position: relative; z-index: 2; font: 500 2rem "Noto Kufi Arabic", sans-serif; animation: loaderTurn 5s linear infinite reverse; }
     @keyframes loaderTurn { to { transform: rotate(360deg); } }
 
     .announcement { display: flex; align-items: center; justify-content: center; gap: 14px; min-height: 38px; padding: 8px 18px; color: var(--cream); background: var(--burgundy); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; text-align: center; }
@@ -71,7 +71,7 @@
     .desktop-nav a::after { content: ""; position: absolute; left: 0; right: 0; bottom: 4px; height: 1px; background: var(--burgundy); transform: scaleX(0); transition: transform .35s var(--ease); }
     .desktop-nav a:hover::after { transform: scaleX(1); }
     .brand { text-align: center; line-height: .8; }
-    .brand strong { display: block; font: 600 clamp(1.5rem, 2.2vw, 2rem) "Playfair Display", serif; letter-spacing: -.05em; }
+    .brand strong { display: block; font: 600 clamp(1.18rem, 1.8vw, 1.65rem) "Noto Kufi Arabic", sans-serif; letter-spacing: -.04em; }
     .brand span { color: var(--burgundy); font-style: italic; }
     .brand small { display: block; margin-top: 9px; color: var(--muted); font: 500 .52rem "DM Sans", sans-serif; letter-spacing: .32em; text-transform: uppercase; }
     .brand strong { background: linear-gradient(110deg, var(--ink) 0 40%, var(--burgundy) 50%, var(--ink) 60% 100%); background-size: 250% 100%; background-clip: text; -webkit-background-clip: text; color: transparent; animation: brandShine 7s ease-in-out infinite; }
@@ -160,8 +160,9 @@
     .category-info { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: 34px; }
     .category-info small { font-size: .63rem; letter-spacing: .15em; text-transform: uppercase; }
     .category-info h3 { margin: 8px 0 0; font: 500 clamp(2.4rem, 4vw, 4.2rem) "Playfair Display", serif; letter-spacing: -.05em; }
-    .category-arrow { position: absolute; right: 28px; bottom: 35px; display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid rgba(255,255,255,.5); border-radius: 50%; transition: color .3s, background .3s, transform .3s; }
-    .category-card:hover .category-arrow { color: var(--burgundy); background: white; transform: rotate(45deg); }
+    .category-arrow { position: absolute; right: 28px; bottom: 35px; display: grid; place-items: center; width: 48px; height: 48px; color: white; border: 1px solid rgba(255,255,255,.58); border-radius: 50%; background: rgba(69,20,31,.2); box-shadow: inset 0 0 0 5px rgba(255,255,255,.06); backdrop-filter: blur(8px); transition: color .35s, background .35s, transform .4s var(--ease), box-shadow .35s; }
+    .category-arrow svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+    .category-card:hover .category-arrow { color: var(--burgundy); background: var(--cream); box-shadow: inset 0 0 0 5px rgba(111,33,49,.06), 0 10px 28px rgba(36,25,21,.18); transform: rotate(45deg) scale(1.06); }
 
     .shop { background: var(--paper); }
     .shop .section-head { margin-bottom: 32px; }
@@ -238,7 +239,7 @@
 
     footer { padding: 70px clamp(20px,4vw,64px) 110px; color: var(--cream); background: #241915; }
     .footer-grid { display: grid; grid-template-columns: 1.2fr repeat(3,.6fr); gap: 45px; }
-    .footer-brand strong { display: block; font: 500 2.5rem "Playfair Display", serif; }
+    .footer-brand strong { display: block; font: 500 2rem "Noto Kufi Arabic", sans-serif; }
     .footer-brand p { max-width: 360px; color: rgba(255,255,255,.55); line-height: 1.7; }
     .social-link { display: inline-flex; align-items: center; gap: 9px; margin-top: 10px; color: var(--sand); font-size: .8rem; }
     .social-link svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.7; }
@@ -290,7 +291,7 @@
     .search-hint { margin-top: 16px; color: var(--muted); font-size: .7rem; }
 
     .account-card { text-align: center; }
-    .account-monogram { width: 90px; height: 90px; display: grid; place-items: center; margin: 25px auto 20px; color: white; background: var(--burgundy); border-radius: 50%; font: 500 2rem "Playfair Display", serif; }
+    .account-monogram { width: 90px; height: 90px; display: grid; place-items: center; margin: 25px auto 20px; color: white; background: var(--burgundy); border-radius: 50%; font: 500 1.5rem "Noto Kufi Arabic", sans-serif; }
     .account-card h3 { margin: 0; font: 500 2rem "Playfair Display", serif; }
     .account-card p { color: var(--muted); line-height: 1.7; }
     .account-signin { width: 100%; margin: 12px 0 18px; }
@@ -410,7 +411,7 @@
   <div class="scroll-progress" aria-hidden="true"></div>
   <div class="cursor-dot" aria-hidden="true"></div>
   <div class="cursor-ring" aria-hidden="true"></div>
-  <div class="loader" aria-hidden="true"><div class="loader-emblem"><span>A&amp;A</span></div></div>
+  <div class="loader" aria-hidden="true"><div class="loader-emblem"><span>م ي</span></div></div>
   <div class="sadu-line" aria-hidden="true"></div>
   <div class="announcement"><i></i> Complimentary UAE delivery on orders over AED 500 <i></i></div>
 
@@ -419,7 +420,7 @@
       <nav class="desktop-nav" aria-label="Primary navigation">
         <a href="#home">Home</a><a href="#categories">Collections</a><a href="#shop">Shop</a><a href="#about">Our story</a>
       </nav>
-      <a class="brand" href="#home" aria-label="Aziza and Aziz home"><strong>Aziza <span>&amp;</span> Aziz</strong><small>Emirati Boutique</small></a>
+      <a class="brand" href="#home" aria-label="مخاوير يدوه home"><strong dir="rtl">مخاوير يدوه</strong><small>Emirati Boutique</small></a>
       <div class="header-actions">
         <button type="button" class="icon-btn account-trigger desktop-only" aria-label="Open account panel"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 21c.6-4.2 3-6.3 7.5-6.3s6.9 2.1 7.5 6.3"/></svg></button>
         <button type="button" class="icon-btn search-trigger" aria-label="Search products"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.7"/><path d="m16 16 4.2 4.2"/></svg></button>
@@ -434,7 +435,7 @@
       <div class="hero-copy">
         <p class="arabic-kicker">من دارنا لداركم — From our home to yours</p>
         <h1>Rooted here.<span>Worn your way.</span></h1>
-        <p class="lead">Contemporary abayas, Emirati Mukhawara, and refined homewear inspired by the warmth, rhythm, and effortless elegance of life in the Emirates.</p>
+        <p class="lead">Colorful Emirati Mukhawaras, graceful abayas, and elegant pajamas inspired by the warmth, rhythm, and effortless style of life in the Emirates.</p>
         <div class="hero-actions"><a class="btn primary" href="#shop">Shop the collection <svg viewBox="0 0 20 20"><path d="M4 10h12m-5-5 5 5-5 5"/></svg></a><a class="btn" href="#about">Our story</a></div>
       </div>
       <div class="hero-visual" role="img" aria-label="Emirati Mukhawara from the collection">
@@ -444,7 +445,7 @@
       </div>
     </section>
 
-    <div class="marquee" aria-hidden="true"><div class="marquee-track"><div class="marquee-content">Abayas <i></i> Emirati Mukhawara <i></i> Elegant PJs <i></i> Designed in the UAE <i></i></div><div class="marquee-content">Abayas <i></i> Emirati Mukhawara <i></i> Elegant PJs <i></i> Designed in the UAE <i></i></div></div></div>
+    <div class="marquee" aria-hidden="true"><div class="marquee-track"><div class="marquee-content">Abayas <i></i> Emirati Mukhawaras <i></i> Elegant Pajamas <i></i> Designed in the UAE <i></i></div><div class="marquee-content">Abayas <i></i> Emirati Mukhawaras <i></i> Elegant Pajamas <i></i> Designed in the UAE <i></i></div></div></div>
 
     <div class="benefits">
       <div class="benefit"><svg viewBox="0 0 24 24"><path d="M3 7h11v10H3zM14 10h4l3 3v4h-7z"/><circle cx="7" cy="19" r="2"/><circle cx="18" cy="19" r="2"/></svg><div><strong>UAE delivery</strong><span>Free over AED 500</span></div></div>
@@ -456,16 +457,16 @@
     <section class="categories" id="categories">
       <div class="section-head reveal"><div><div class="eyebrow">Shop by collection</div><h2>Three sides of local elegance.</h2></div><p>From morning coffee to the majlis, every collection is made to feel unmistakably at home.</p></div>
       <div class="category-grid">
-        <article class="category-card reveal" data-category-link="abayas"><div class="category-image cat-abaya"></div><div class="category-info"><small>3 signature pieces</small><h3>Abayas</h3></div><span class="category-arrow">↗</span></article>
-        <article class="category-card reveal" data-category-link="mukhawara"><div class="category-image cat-mukhawara"></div><div class="category-info"><small>3 heritage looks</small><h3>Mukhawara</h3></div><span class="category-arrow">↗</span></article>
-        <article class="category-card reveal" data-category-link="pjs"><div class="category-image cat-pj"></div><div class="category-info"><small>3 soft sets</small><h3>Elegant PJs</h3></div><span class="category-arrow">↗</span></article>
+        <article class="category-card reveal" data-category-link="abayas"><div class="category-image cat-abaya"></div><div class="category-info"><small>3 signature pieces</small><h3>Abayas</h3></div><span class="category-arrow" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M5.5 14.5 14.5 5.5M7.5 5.5h7v7"/></svg></span></article>
+        <article class="category-card reveal" data-category-link="mukhawara"><div class="category-image cat-mukhawara"></div><div class="category-info"><small>3 colorful local looks</small><h3>Emirati Mukhawaras</h3></div><span class="category-arrow" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M5.5 14.5 14.5 5.5M7.5 5.5h7v7"/></svg></span></article>
+        <article class="category-card reveal" data-category-link="pjs"><div class="category-image cat-pj"></div><div class="category-info"><small>3 soft sets</small><h3>Elegant Pajamas</h3></div><span class="category-arrow" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M5.5 14.5 14.5 5.5M7.5 5.5h7v7"/></svg></span></article>
       </div>
     </section>
 
     <section class="shop" id="shop">
       <div class="section-head reveal"><div><div class="eyebrow" id="shop-eyebrow">The collection</div><h2 id="shop-title">Made for your rhythm.</h2></div><p>Small, considered collections in rich local colors and beautifully comfortable fabrics.</p></div>
       <div class="shop-toolbar">
-        <div class="category-tabs" role="tablist" aria-label="Product categories"><button type="button" class="tab active" data-category="all">All pieces</button><button type="button" class="tab" data-category="abayas">Abayas</button><button type="button" class="tab" data-category="mukhawara">Mukhawara</button><button type="button" class="tab" data-category="pjs">PJs</button></div>
+        <div class="category-tabs" role="tablist" aria-label="Product categories"><button type="button" class="tab active" data-category="all">All pieces</button><button type="button" class="tab" data-category="abayas">Abayas</button><button type="button" class="tab" data-category="mukhawara">Emirati Mukhawaras</button><button type="button" class="tab" data-category="pjs">Pajamas</button></div>
         <div class="toolbar-actions"><button type="button" class="toolbar-button search-trigger"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.7"/><path d="m16 16 4.2 4.2"/></svg> Search</button><button type="button" class="toolbar-button filter-trigger"><svg viewBox="0 0 24 24"><path d="M4 7h16M7 12h10M10 17h4"/></svg> Filters</button><select class="sort-select" id="sort-select" aria-label="Sort products"><option value="featured">Sort: Featured</option><option value="low">Price: Low to high</option><option value="high">Price: High to low</option><option value="name">Name: A–Z</option></select></div>
       </div>
       <div class="results-line"><span id="result-count">9 pieces</span><button type="button" class="clear-view" id="clear-view" hidden>Show all pieces</button></div>
@@ -475,7 +476,7 @@
     <section class="about" id="about">
       <div class="about-grid">
         <div class="about-year reveal"><div class="year-content"><span>Established in</span><strong>2026</strong><span>United Arab Emirates</span></div></div>
-        <div class="about-copy reveal"><div class="eyebrow">About Aziza &amp; Aziz</div><h2>A new name, carrying an old feeling.</h2><p>Aziza &amp; Aziz was established in the UAE in 2026 with one simple purpose: to create clothing that feels connected to home. Our collections bring together the graceful movement of the abaya, the rich character of Emirati Mukhawara, and the comfort of beautifully made homewear.</p><p>We design for women who value tradition without standing still — pieces that feel local, personal, and easy to make your own.</p><div class="about-values"><div class="value"><strong>Local soul</strong><span>Inspired by Emirati life</span></div><div class="value"><strong>Small runs</strong><span>Considered, not crowded</span></div><div class="value"><strong>Made to live in</strong><span>Comfort in every detail</span></div></div></div>
+        <div class="about-copy reveal"><div class="eyebrow">About مخاوير يدوه</div><h2>A new name, carrying an old feeling.</h2><p>مخاوير يدوه was established in the UAE in 2026 with one simple purpose: to create clothing that feels connected to home. Our collections bring together graceful abayas, colorful Emirati Mukhawaras, and the comfort of beautifully made pajamas.</p><p>We design for women who value tradition without standing still — pieces that feel local, personal, and easy to make your own.</p><div class="about-values"><div class="value"><strong>Local soul</strong><span>Inspired by Emirati life</span></div><div class="value"><strong>Small runs</strong><span>Considered, not crowded</span></div><div class="value"><strong>Made to live in</strong><span>Comfort in every detail</span></div></div></div>
       </div>
     </section>
 
@@ -485,8 +486,8 @@
   </main>
 
   <footer>
-    <div class="footer-grid"><div class="footer-brand"><strong>Aziza &amp; Aziz</strong><p>Modern Emirati clothing for the beautiful rhythm of everyday life.</p><a class="social-link" href="https://www.instagram.com/uwnn_/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg>@uwnn_ on Instagram</a></div><div class="footer-col"><h4>Shop</h4><a href="#shop" data-footer-category="abayas">Abayas</a><a href="#shop" data-footer-category="mukhawara">Mukhawara</a><a href="#shop" data-footer-category="pjs">PJs</a></div><div class="footer-col"><h4>About</h4><a href="#about">Our story</a><a href="#">Delivery &amp; returns</a><a href="#">Size guide</a></div><div class="footer-col"><h4>Help</h4><a href="#">Contact us</a><a href="#">Care guide</a><a href="#">FAQs</a></div></div>
-    <div class="footer-bottom"><span>© <span id="year"></span> Aziza &amp; Aziz. All rights reserved.</span><span>Made with care in the UAE · الأسعار تشمل ضريبة القيمة المضافة</span></div>
+    <div class="footer-grid"><div class="footer-brand"><strong dir="rtl">مخاوير يدوه</strong><p>Modern Emirati clothing for the beautiful rhythm of everyday life.</p><a class="social-link" href="https://www.instagram.com/uwnn_/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg>@uwnn_ on Instagram</a></div><div class="footer-col"><h4>Shop</h4><a href="#shop" data-footer-category="abayas">Abayas</a><a href="#shop" data-footer-category="mukhawara">Emirati Mukhawaras</a><a href="#shop" data-footer-category="pjs">Pajamas</a></div><div class="footer-col"><h4>About</h4><a href="#about">Our story</a><a href="#">Delivery &amp; returns</a><a href="#">Size guide</a></div><div class="footer-col"><h4>Help</h4><a href="#">Contact us</a><a href="#">Care guide</a><a href="#">FAQs</a></div></div>
+    <div class="footer-bottom"><span>© <span id="year"></span> مخاوير يدوه. All rights reserved.</span><span>Made with care in the UAE · الأسعار تشمل ضريبة القيمة المضافة</span></div>
   </footer>
 
   <div class="scrim" id="scrim"></div>
@@ -495,9 +496,9 @@
 
   <aside class="drawer" id="filter-drawer" aria-label="Product filters" inert><div class="drawer-head"><h2>Filter pieces</h2><button type="button" class="close-btn" data-close aria-label="Close filters"><svg viewBox="0 0 24 24"><path d="m5 5 14 14M19 5 5 19"/></svg></button></div><div class="drawer-body"><div class="filter-group"><h3>Price range</h3><div class="range-values"><span id="min-label">AED 250</span><span id="max-label">AED 900</span></div><label for="min-price">Minimum price</label><input type="range" id="min-price" min="250" max="900" step="10" value="250"><label for="max-price">Maximum price</label><input type="range" id="max-price" min="250" max="900" step="10" value="900"></div><div class="filter-group"><h3>Size</h3><div class="size-options"><button type="button" class="choice" data-size="S">S</button><button type="button" class="choice" data-size="M">M</button><button type="button" class="choice" data-size="L">L</button><button type="button" class="choice" data-size="XL">XL</button><button type="button" class="choice" data-size="Free">Free size</button></div></div><div class="filter-group"><h3>Color mood</h3><div class="color-options"><button type="button" class="choice color-choice" data-color="dark"><span class="swatch swatch-dark"></span>Dark</button><button type="button" class="choice color-choice" data-color="earth"><span class="swatch swatch-earth"></span>Earth</button><button type="button" class="choice color-choice" data-color="jewel"><span class="swatch swatch-jewel"></span>Jewel</button><button type="button" class="choice color-choice" data-color="soft"><span class="swatch swatch-soft"></span>Soft</button></div></div><button type="button" class="btn primary apply-filter" id="apply-filter">Apply filters</button><button type="button" class="btn apply-filter" id="reset-filter">Reset all</button></div></aside>
 
-  <aside class="drawer" id="account-drawer" aria-label="Account" inert><div class="drawer-head"><h2>Your account</h2><button type="button" class="close-btn" data-close aria-label="Close account"><svg viewBox="0 0 24 24"><path d="m5 5 14 14M19 5 5 19"/></svg></button></div><div class="drawer-body account-card"><div class="account-monogram">A&amp;A</div><h3>Ahlan, welcome.</h3><p>Sign in to see orders, save delivery details, and keep your favorites across devices.</p><button type="button" class="btn primary account-signin">Sign in / Create account</button><div class="account-feature"><span>♡</span><div><strong>Saved favorites</strong><small>Keep your most-loved pieces close.</small></div></div><div class="account-feature"><span>⌁</span><div><strong>Order tracking</strong><small>Follow your delivery around the UAE.</small></div></div></div></aside>
+  <aside class="drawer" id="account-drawer" aria-label="Account" inert><div class="drawer-head"><h2>Your account</h2><button type="button" class="close-btn" data-close aria-label="Close account"><svg viewBox="0 0 24 24"><path d="m5 5 14 14M19 5 5 19"/></svg></button></div><div class="drawer-body account-card"><div class="account-monogram">م ي</div><h3>Ahlan, welcome.</h3><p>Sign in to see orders, save delivery details, and keep your favorites across devices.</p><button type="button" class="btn primary account-signin">Sign in / Create account</button><div class="account-feature"><span>♡</span><div><strong>Saved favorites</strong><small>Keep your most-loved pieces close.</small></div></div><div class="account-feature"><span>⌁</span><div><strong>Order tracking</strong><small>Follow your delivery around the UAE.</small></div></div></div></aside>
 
-  <div class="search-panel" id="search-panel" inert><div class="search-top"><span>Find your piece</span><button type="button" class="close-btn" id="close-search" aria-label="Close search"><svg viewBox="0 0 24 24"><path d="m5 5 14 14M19 5 5 19"/></svg></button></div><div class="search-box"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.7"/><path d="m16 16 4.2 4.2"/></svg><input id="search-input" type="search" placeholder="Search abayas, Mukhawara, PJs…" autocomplete="off"></div><div class="search-hint" id="search-hint">Try “black abaya”, “sage”, or “satin”. Press Enter to view results.</div></div>
+  <div class="search-panel" id="search-panel" inert><div class="search-top"><span>Find your piece</span><button type="button" class="close-btn" id="close-search" aria-label="Close search"><svg viewBox="0 0 24 24"><path d="m5 5 14 14M19 5 5 19"/></svg></button></div><div class="search-box"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.7"/><path d="m16 16 4.2 4.2"/></svg><input id="search-input" type="search" placeholder="Search abayas, Mukhawaras, pajamas…" autocomplete="off"></div><div class="search-hint" id="search-hint">Try “black abaya”, “sage”, or “satin”. Press Enter to view results.</div></div>
 
   <div class="checkout-modal" id="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkout-title" inert><div class="search-top"><span>Secure checkout</span><button type="button" class="close-btn" id="close-checkout" aria-label="Close checkout"><svg viewBox="0 0 24 24"><path d="m5 5 14 14M19 5 5 19"/></svg></button></div><h2 id="checkout-title">How would you like to pay?</h2><p>Choose a payment method for your UAE order.</p><div class="payment-list"><label class="payment-option"><input type="radio" name="payment" value="Apple Pay" checked><span class="pay-logo"> Pay</span><span>Apple Pay<small>Fast and secure checkout</small></span></label><label class="payment-option"><input type="radio" name="payment" value="Visa / Debit"><span class="pay-logo">VISA</span><span>Visa or debit card<small>All major UAE-issued cards</small></span></label><label class="payment-option"><input type="radio" name="payment" value="PayPal"><span class="pay-logo">PayPal</span><span>PayPal<small>Use your PayPal account</small></span></label><label class="payment-option"><input type="radio" name="payment" value="Cash on delivery"><span class="pay-logo">COD</span><span>Cash on delivery<small>Pay when your order arrives</small></span></label></div><div class="checkout-actions"><button type="button" class="btn" id="cancel-checkout">Cancel</button><button type="button" class="btn primary" id="place-order">Continue securely</button></div></div>
 
@@ -513,9 +514,9 @@
       {id:4,name:'Al Dana Mukhawara',ar:'مخور الدانة',category:'mukhawara',price:890,color:'jewel',sizes:['Free'],tag:'Heritage',pos:3,keywords:'burgundy maroon gold traditional'},
       {id:5,name:'Rawdah Mukhawara',ar:'مخور الروضة',category:'mukhawara',price:760,color:'soft',sizes:['Free'],tag:'New',pos:4,keywords:'sage green embroidery traditional'},
       {id:6,name:'Nojoom Mukhawara',ar:'مخور نجوم',category:'mukhawara',price:840,color:'dark',sizes:['Free'],tag:'Signature',pos:5,keywords:'navy midnight blue silver'},
-      {id:7,name:'Sukun Linen PJ',ar:'طقم سكون',category:'pjs',price:340,color:'soft',sizes:['S','M','L','XL'],tag:'Soft linen',pos:6,keywords:'oatmeal ivory linen pajama pyjama'},
-      {id:8,name:'Ward Satin PJ',ar:'طقم ورد',category:'pjs',price:390,color:'soft',sizes:['S','M','L','XL'],tag:'Most loved',pos:7,keywords:'dusty rose pink satin pajama pyjama'},
-      {id:9,name:'Cocoa Majlis PJ',ar:'طقم كاكاو',category:'pjs',price:360,color:'earth',sizes:['S','M','L','XL'],tag:'Everyday',pos:8,keywords:'brown cocoa cotton pajama pyjama'}
+      {id:7,name:'Sukun Linen Pajama Set',ar:'طقم سكون',category:'pjs',price:340,color:'soft',sizes:['S','M','L','XL'],tag:'Soft linen',pos:6,keywords:'oatmeal ivory linen pajama pyjama'},
+      {id:8,name:'Ward Satin Pajama Set',ar:'طقم ورد',category:'pjs',price:390,color:'soft',sizes:['S','M','L','XL'],tag:'Most loved',pos:7,keywords:'dusty rose pink satin pajama pyjama'},
+      {id:9,name:'Cocoa Majlis Pajama Set',ar:'طقم كاكاو',category:'pjs',price:360,color:'earth',sizes:['S','M','L','XL'],tag:'Everyday',pos:8,keywords:'brown cocoa cotton pajama pyjama'}
     ];
 
     const safeStore = {
@@ -535,7 +536,7 @@
     const toast = document.getElementById('toast');
     const motionOff = matchMedia('(prefers-reduced-motion: reduce)').matches;
     const money = n => `AED ${n.toLocaleString('en-AE')}`;
-    const categoryName = c => c === 'abayas' ? 'Abaya' : c === 'mukhawara' ? 'Mukhawara' : 'PJs';
+    const categoryName = c => c === 'abayas' ? 'Abaya' : c === 'mukhawara' ? 'Emirati Mukhawara' : 'Pajamas';
 
     addEventListener('load', () => setTimeout(() => document.querySelector('.loader').classList.add('hidden'), 900));
     document.getElementById('year').textContent = new Date().getFullYear();
