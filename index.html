@@ -210,6 +210,22 @@
     .product-name { margin: 3px 0 0; font: 500 1.25rem "Playfair Display", serif; letter-spacing: -.025em; }
     .product-arabic { margin-top: 4px; color: var(--muted); font: 400 .66rem "Noto Kufi Arabic", sans-serif; }
     .product-price { grid-row: 1 / span 2; grid-column: 2; align-self: center; font-size: .8rem; font-weight: 600; }
+    .product-view-trigger { display: block; width: 100%; padding: 0; border: 0; background: transparent; cursor: zoom-in; }
+    .product-name-button { padding: 0; border: 0; color: inherit; background: transparent; text-align: left; cursor: pointer; }
+    .product-modal { position: fixed; inset: 3vh 3vw; z-index: 220; display: grid; grid-template-columns: minmax(0,1.35fr) minmax(300px,.65fr); visibility: hidden; overflow: hidden; background: var(--paper); box-shadow: 0 35px 100px rgba(36,25,21,.28); opacity: 0; transform: translateY(22px) scale(.98); transition: .4s var(--ease); }
+    .product-modal.open { visibility: visible; opacity: 1; transform: none; }
+    .product-modal-photo { min-height: 0; background-color: #eee4d7; background-repeat: no-repeat; background-size: contain; background-position: center; }
+    .product-modal-details { position: relative; display: flex; flex-direction: column; justify-content: center; gap: 17px; overflow-y: auto; padding: clamp(30px,5vw,76px); }
+    .product-modal-details .close-btn { position: absolute; top: 20px; right: 20px; }
+    .product-modal-details h2 { margin: 0; font: 500 clamp(2rem,3.5vw,3.6rem)/1.02 "Playfair Display",serif; }
+    .product-modal-category { color: var(--burgundy); font-size: .67rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
+    .product-modal-price { font-size: 1.1rem; font-weight: 700; }
+    .product-modal-copy { margin: 0; color: var(--muted); line-height: 1.75; }
+    .product-modal-sizes { display: flex; flex-wrap: wrap; gap: 8px; }
+    .product-modal-sizes span { padding: 9px 13px; border: 1px solid var(--line); border-radius: 999px; font-size: .7rem; }
+    .product-modal-actions { display: grid; grid-template-columns: 1fr auto; gap: 10px; }
+    .product-modal-actions .btn { min-height: 52px; }
+    @media (max-width: 760px) { .product-modal { inset: 0; grid-template-columns: 1fr; grid-template-rows: minmax(52vh,1fr) auto; overflow-y: auto; } .product-modal-photo { min-height: 58vh; } .product-modal-details { overflow: visible; padding: 30px 22px calc(95px + env(safe-area-inset-bottom)); } }
     .empty-state { grid-column: 1/-1; padding: 90px 20px; text-align: center; border: 1px dashed var(--line); }
     .empty-state .empty-heart { display: grid; place-items: center; width: 70px; height: 70px; margin: 0 auto 20px; color: var(--burgundy); background: var(--cream); border-radius: 50%; font-size: 1.8rem; }
     .empty-state h3 { margin: 0 0 8px; font: 500 2rem "Playfair Display", serif; }
@@ -510,6 +526,8 @@
 
   <div class="checkout-modal" id="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkout-title" inert><div class="search-top"><span>Secure checkout</span><button type="button" class="close-btn" id="close-checkout" aria-label="Close checkout"><svg viewBox="0 0 24 24"><path d="m5 5 14 14M19 5 5 19"/></svg></button></div><h2 id="checkout-title">How would you like to pay?</h2><p>Choose a payment method for your UAE order.</p><div class="payment-list"><label class="payment-option"><input type="radio" name="payment" value="Apple Pay" checked><span class="pay-logo"> Pay</span><span>Apple Pay<small>Fast and secure checkout</small></span></label><label class="payment-option"><input type="radio" name="payment" value="Visa / Debit"><span class="pay-logo">VISA</span><span>Visa or debit card<small>All major UAE-issued cards</small></span></label><label class="payment-option"><input type="radio" name="payment" value="PayPal"><span class="pay-logo">PayPal</span><span>PayPal<small>Use your PayPal account</small></span></label><label class="payment-option"><input type="radio" name="payment" value="Cash on delivery"><span class="pay-logo">COD</span><span>Cash on delivery<small>Pay when your order arrives</small></span></label></div><div class="checkout-actions"><button type="button" class="btn" id="cancel-checkout">Cancel</button><button type="button" class="btn primary" id="place-order">Continue securely</button></div></div>
 
+  <div class="product-modal" id="product-modal" role="dialog" aria-modal="true" aria-labelledby="product-modal-name" inert><div class="product-modal-photo" id="product-modal-photo" role="img"></div><div class="product-modal-details"><button type="button" class="close-btn" id="close-product" aria-label="Close product"><svg viewBox="0 0 24 24"><path d="m5 5 14 14M19 5 5 19"/></svg></button><div class="product-modal-category" id="product-modal-category"></div><h2 id="product-modal-name"></h2><div class="product-arabic" id="product-modal-arabic" dir="rtl"></div><div class="product-modal-price" id="product-modal-price"></div><p class="product-modal-copy">A locally inspired piece finished with thoughtful details for elegant everyday wear and special gatherings. View the complete silhouette here before adding it to your bag.</p><div class="product-modal-sizes" id="product-modal-sizes"></div><div class="product-modal-actions"><button type="button" class="btn primary" id="product-modal-add">Add to bag</button><button type="button" class="btn" id="product-modal-fav" aria-label="Save to favorites">♡</button></div></div></div>
+
   <nav class="mobile-nav" aria-label="Mobile navigation"><button type="button" data-mobile="home" class="active"><svg viewBox="0 0 24 24"><path d="m3 11 9-8 9 8v10h-6v-6H9v6H3Z"/></svg><span>Home</span></button><button type="button" data-mobile="search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.7"/><path d="m16 16 4.2 4.2"/></svg><span>Search</span></button><button type="button" data-mobile="categories"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg><span>Categories</span></button><button type="button" data-mobile="favorites"><svg viewBox="0 0 24 24"><path d="M20.5 5.8c-2.2-2.4-5.8-1.4-8.5 1.5C9.3 4.4 5.7 3.4 3.5 5.8.9 8.7 3.2 13 12 20c8.8-7 11.1-11.3 8.5-14.2Z"/></svg><span>Favorites</span><b class="mobile-badge fav-count" data-count="0">0</b></button><button type="button" data-mobile="account"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 21c.6-4.2 3-6.3 7.5-6.3s6.9 2.1 7.5 6.3"/></svg><span>Account</span></button></nav>
 
   <div class="toast" id="toast" role="status" aria-live="polite">Added to your bag</div>
@@ -624,9 +642,10 @@
         document.getElementById('empty-reset').addEventListener('click', resetView);
         return;
       }
-      grid.innerHTML = list.map((p,i) => `<article class="product-card" style="animation-delay:${Math.min(i,6)*.07}s"><div class="product-media"><div class="product-image pos-${p.pos}" role="img" aria-label="${p.name}"></div><span class="product-tag">${p.tag}</span><button type="button" class="fav-btn ${favorites.has(p.id)?'active':''}" data-fav="${p.id}" aria-label="${favorites.has(p.id)?'Remove from':'Add to'} favorites"><svg viewBox="0 0 24 24"><path d="M20.5 5.8c-2.2-2.4-5.8-1.4-8.5 1.5C9.3 4.4 5.7 3.4 3.5 5.8.9 8.7 3.2 13 12 20c8.8-7 11.1-11.3 8.5-14.2Z"/></svg></button><button type="button" class="quick-add" data-add="${p.id}">Add to bag · ${money(p.price)}</button></div><div class="product-info"><div><div class="product-category">${categoryName(p.category)}</div><h3 class="product-name">${p.name}</h3><div class="product-arabic" dir="rtl">${p.ar}</div></div><div class="product-price">${money(p.price)}</div></div></article>`).join('');
+      grid.innerHTML = list.map((p,i) => `<article class="product-card" style="animation-delay:${Math.min(i,6)*.07}s"><div class="product-media"><button type="button" class="product-view-trigger" data-view="${p.id}" aria-label="View complete picture of ${p.name}"><div class="product-image pos-${p.pos}" role="img" aria-label="${p.name}"></div></button><span class="product-tag">${p.tag}</span><button type="button" class="fav-btn ${favorites.has(p.id)?'active':''}" data-fav="${p.id}" aria-label="${favorites.has(p.id)?'Remove from':'Add to'} favorites"><svg viewBox="0 0 24 24"><path d="M20.5 5.8c-2.2-2.4-5.8-1.4-8.5 1.5C9.3 4.4 5.7 3.4 3.5 5.8.9 8.7 3.2 13 12 20c8.8-7 11.1-11.3 8.5-14.2Z"/></svg></button><button type="button" class="quick-add" data-add="${p.id}">Add to bag · ${money(p.price)}</button></div><div class="product-info"><div><div class="product-category">${categoryName(p.category)}</div><h3 class="product-name"><button type="button" class="product-name-button" data-view="${p.id}">${p.name}</button></h3><div class="product-arabic" dir="rtl">${p.ar}</div></div><div class="product-price">${money(p.price)}</div></div></article>`).join('');
       grid.querySelectorAll('[data-fav]').forEach(btn => btn.addEventListener('click', () => toggleFavorite(Number(btn.dataset.fav))));
       grid.querySelectorAll('[data-add]').forEach(btn => btn.addEventListener('click', () => addToCart(Number(btn.dataset.add))));
+      grid.querySelectorAll('[data-view]').forEach(btn => btn.addEventListener('click', () => openProduct(Number(btn.dataset.view))));
       bindMotion(grid);
     }
 
@@ -649,6 +668,20 @@
       document.querySelectorAll('.cart-trigger').forEach(icon => { icon.classList.remove('shake'); void icon.offsetWidth; icon.classList.add('shake'); });
     }
 
+    function openProduct(id) {
+      const p=products.find(item=>item.id===id), modal=document.getElementById('product-modal');
+      document.getElementById('product-modal-photo').className=`product-modal-photo pos-${p.pos}`;
+      document.getElementById('product-modal-photo').setAttribute('aria-label',`Complete picture of ${p.name}`);
+      document.getElementById('product-modal-category').textContent=categoryName(p.category);
+      document.getElementById('product-modal-name').textContent=p.name;
+      document.getElementById('product-modal-arabic').textContent=p.ar;
+      document.getElementById('product-modal-price').textContent=money(p.price);
+      document.getElementById('product-modal-sizes').innerHTML=p.sizes.map(size=>`<span>${size}</span>`).join('');
+      document.getElementById('product-modal-add').onclick=()=>addToCart(p.id);
+      const fav=document.getElementById('product-modal-fav'); fav.textContent=favorites.has(p.id)?'♥':'♡'; fav.onclick=()=>{toggleFavorite(p.id);fav.textContent=favorites.has(p.id)?'♥':'♡';};
+      closeLayers(false); modal.inert=false; modal.classList.add('open'); scrim.classList.add('open'); document.body.classList.add('locked');
+    }
+
     function renderCart() {
       const wrap = document.getElementById('cart-items');
       if (!cart.length) wrap.innerHTML = '<div class="empty-state" style="padding:55px 15px"><div class="empty-heart">⌁</div><h3>Your bag is empty.</h3><p>Beautiful things are waiting in the collection.</p><button type="button" class="btn primary" data-close>Start shopping</button></div>';
@@ -666,7 +699,7 @@
     function removeCart(id){ cart=cart.filter(i=>i.id!==id); safeStore.set('aziza-cart',cart); updateCounts(); renderCart(); showToast('Removed from your bag'); }
 
     function openDrawer(id) { closeLayers(false); const el=document.getElementById(id); el.inert=false; el.classList.add('open'); scrim.classList.add('open'); document.body.classList.add('locked'); }
-    function closeLayers(unlock=true) { document.querySelectorAll('.drawer,.search-panel,.checkout-modal').forEach(el=>{el.classList.remove('open');el.inert=true;}); scrim.classList.remove('open'); if(unlock)document.body.classList.remove('locked'); }
+    function closeLayers(unlock=true) { document.querySelectorAll('.drawer,.search-panel,.checkout-modal,.product-modal').forEach(el=>{el.classList.remove('open');el.inert=true;}); scrim.classList.remove('open'); if(unlock)document.body.classList.remove('locked'); }
 
     function showFavorites(){ favoritesOnly=true; searchTerm=''; activeCategory='all'; document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.dataset.category==='all')); renderProducts(); closeLayers(); document.getElementById('shop').scrollIntoView(); }
     function chooseCategory(cat){ activeCategory=cat; favoritesOnly=false; searchTerm=''; document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.dataset.category===cat)); renderProducts(); document.getElementById('shop').scrollIntoView(); }
@@ -702,7 +735,7 @@
     document.getElementById('reset-filter').addEventListener('click',()=>{resetView();closeLayers();});
 
     document.getElementById('checkout-button').addEventListener('click',()=>{if(!cart.length){showToast('Your bag is empty');return;}closeLayers(false);const modal=document.getElementById('checkout-modal');modal.inert=false;modal.classList.add('open');scrim.classList.add('open');document.body.classList.add('locked');});
-    document.getElementById('close-checkout').addEventListener('click',closeLayers); document.getElementById('cancel-checkout').addEventListener('click',closeLayers);
+    document.getElementById('close-checkout').addEventListener('click',closeLayers); document.getElementById('cancel-checkout').addEventListener('click',closeLayers); document.getElementById('close-product').addEventListener('click',closeLayers);
     document.getElementById('place-order').addEventListener('click',()=>{const method=document.querySelector('input[name="payment"]:checked').value;closeLayers();showToast(`${method} selected · Checkout demo ready`);});
 
     document.querySelectorAll('[data-mobile]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-mobile]').forEach(x=>x.classList.remove('active'));b.classList.add('active');const a=b.dataset.mobile;if(a==='home')document.getElementById('home').scrollIntoView();if(a==='search')document.querySelector('.search-trigger').click();if(a==='categories')document.getElementById('categories').scrollIntoView();if(a==='favorites')showFavorites();if(a==='account')openDrawer('account-drawer');}));
